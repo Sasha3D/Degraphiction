@@ -1,0 +1,105 @@
+[gd_scene load_steps=15 format=3 uid="uid://bntk1ksxnljgs"]
+
+[ext_resource type="Shader" uid="uid://bknx4sbhoevs6" path="res://Shaders/wall_shader.tres" id="2_ulpwd"]
+[ext_resource type="Texture2D" uid="uid://de3qrpkqf5rus" path="res://Textures/graffiti.png" id="3_3ixld"]
+[ext_resource type="Texture2D" uid="uid://bnqge0pda7u8w" path="res://Textures/brick_ambient.png" id="4_n1no0"]
+[ext_resource type="Texture2D" uid="uid://o8jde7fms3ph" path="res://Textures/brick_normal.png" id="5_r1og4"]
+[ext_resource type="Script" path="res://Scripts/Wall.gd" id="6_8ob64"]
+[ext_resource type="Texture2D" uid="uid://bcx7ua3ysbue" path="res://Textures/brick.jpg" id="6_ngqpg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e7od5"]
+sky_top_color = Color(0.0666667, 0.0392157, 0.121569, 1)
+sky_horizon_color = Color(0.551961, 0.539216, 0.553922, 1)
+sky_energy_multiplier = 0.15
+ground_bottom_color = Color(0.141176, 0.117647, 0.0941176, 1)
+ground_horizon_color = Color(0.551961, 0.539216, 0.553922, 1)
+
+[sub_resource type="Sky" id="Sky_jjlok"]
+sky_material = SubResource("ProceduralSkyMaterial_e7od5")
+
+[sub_resource type="Environment" id="Environment_ae5io"]
+background_mode = 2
+background_energy_multiplier = 1.22
+sky = SubResource("Sky_jjlok")
+tonemap_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_g2oy7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_clwke"]
+render_priority = 0
+shader = ExtResource("2_ulpwd")
+shader_parameter/mouse_position = null
+shader_parameter/UVMode = 1.0
+shader_parameter/GraffitiColor = Color(1, 1, 1, 1)
+shader_parameter/WallTex = ExtResource("6_ngqpg")
+shader_parameter/GraffitiTex = ExtResource("3_3ixld")
+shader_parameter/WallAmbientOcclusion = ExtResource("4_n1no0")
+shader_parameter/WallNormal = ExtResource("5_r1og4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qk1nd"]
+render_priority = 0
+shader = ExtResource("2_ulpwd")
+shader_parameter/mouse_position = null
+shader_parameter/UVMode = 0.0
+shader_parameter/GraffitiColor = Color(1, 1, 1, 1)
+shader_parameter/WallTex = ExtResource("6_ngqpg")
+shader_parameter/GraffitiTex = ExtResource("3_3ixld")
+shader_parameter/WallAmbientOcclusion = ExtResource("4_n1no0")
+shader_parameter/WallNormal = ExtResource("5_r1og4")
+
+[sub_resource type="QuadMesh" id="QuadMesh_dgp28"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uaajh"]
+render_priority = 0
+shader = ExtResource("2_ulpwd")
+shader_parameter/mouse_position = null
+shader_parameter/UVMode = 0.0
+shader_parameter/GraffitiColor = Color(1, 1, 1, 1)
+shader_parameter/WallTex = ExtResource("6_ngqpg")
+shader_parameter/GraffitiTex = ExtResource("3_3ixld")
+shader_parameter/WallAmbientOcclusion = ExtResource("4_n1no0")
+shader_parameter/WallNormal = ExtResource("5_r1og4")
+
+[node name="Root" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.313992, -0.11077, 0.942942, 0, 0.993171, 0.116671, -0.949425, -0.0366337, 0.311848, 0, 0, 0)
+light_energy = 0.25
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ae5io")
+
+[node name="MainCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26.435, 40)
+projection = 1
+fov = 67.3
+size = 51.999
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="Wall" type="Node3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Walls/Wall"]
+transform = Transform3D(60.0585, -0.110639, 0.000412849, 0.12781, 51.9998, -0.00101164, -0.0246211, 0.0525533, 1.00185, -0.423965, 0.104099, 0.0639725)
+mesh = SubResource("QuadMesh_g2oy7")
+surface_material_override/0 = SubResource("ShaderMaterial_clwke")
+script = ExtResource("6_8ob64")
+
+[node name="Wall2" type="Node3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.1087, 26, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Walls/Wall2"]
+transform = Transform3D(60.0585, -0.110639, 0.000412849, 0.12781, 51.9998, -0.00101164, -0.0246211, 0.0525533, 1.00185, -0.423965, 0.104099, 0.0639725)
+material_override = SubResource("ShaderMaterial_qk1nd")
+mesh = SubResource("QuadMesh_dgp28")
+
+[node name="Wall3" type="Node3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158.624, 26, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Walls/Wall3"]
+transform = Transform3D(60.0585, -0.110639, 0.000412849, 0.12781, 51.9998, -0.00101164, -0.0246211, 0.0525533, 1.00185, -0.423965, 0.104099, 0.0639725)
+mesh = SubResource("QuadMesh_g2oy7")
+surface_material_override/0 = SubResource("ShaderMaterial_uaajh")
+script = ExtResource("6_8ob64")
