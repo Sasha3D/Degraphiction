@@ -10,6 +10,14 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rsjit"]
 transparency = 1
 albedo_texture = ExtResource("5_ucdqv")
+metallic = 1.0
+metallic_texture = ExtResource("4_rv6g0")
+normal_enabled = true
+normal_texture = ExtResource("6_35gyh")
+ao_enabled = true
+ao_texture = ExtResource("2_uwucl")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_64c0s")
 
 [resource]
 next_pass = SubResource("StandardMaterial3D_rsjit")

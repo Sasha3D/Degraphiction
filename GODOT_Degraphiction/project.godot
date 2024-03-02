@@ -12,7 +12,7 @@ config_version=5
 
 config/name="GODOT_Degraphiction"
 run/main_scene="res://Scripts/node_3d.tscn"
-config/features=PackedStringArray("4.2", "Forward Plus")
+config/features=PackedStringArray("4.1", "Forward Plus")
 
 [input]
 
