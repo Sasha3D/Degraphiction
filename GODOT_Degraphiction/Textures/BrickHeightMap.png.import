@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5mbjs00rruu8"
-path.s3tc="res://.godot/imported/Brick.JPG-eacce843c819228bd8f631af8ac398e5.s3tc.ctex"
+uid="uid://df1ofcshrm2qv"
+path.s3tc="res://.godot/imported/BrickHeightMap.png-a052e3f4e287133e983631aafa3b23f0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Brick.JPG"
-dest_files=["res://.godot/imported/Brick.JPG-eacce843c819228bd8f631af8ac398e5.s3tc.ctex"]
+source_file="res://Textures/BrickHeightMap.png"
+dest_files=["res://.godot/imported/BrickHeightMap.png-a052e3f4e287133e983631aafa3b23f0.s3tc.ctex"]
 
 [params]
 

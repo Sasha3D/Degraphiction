@@ -1,0 +1,104 @@
+[gd_scene load_steps=23 format=3 uid="uid://b2lgfkhx40pgv"]
+
+[ext_resource type="Texture2D" uid="uid://5mbjs00rruu8" path="res://Textures/Brick.JPG" id="1_1leo3"]
+[ext_resource type="Material" uid="uid://c2e1g6by828ef" path="res://Materials/RatGraffity.tres" id="1_1lgr6"]
+[ext_resource type="Material" uid="uid://bswpbvt03bbgt" path="res://Materials/YolandeGraffity.tres" id="2_eenhm"]
+[ext_resource type="Texture2D" uid="uid://cop1bwip2h2un" path="res://Textures/BrickAmbientOcc.png" id="2_phncp"]
+[ext_resource type="Texture2D" uid="uid://df1ofcshrm2qv" path="res://Textures/BrickHeightMap.png" id="3_hwi70"]
+[ext_resource type="Texture2D" uid="uid://di818b0foh2yt" path="res://Textures/BrickSpecularMap.png" id="4_2unkd"]
+[ext_resource type="Texture2D" uid="uid://cp0y0b6q7qqdv" path="res://Textures/BrickNormal.png" id="6_1wfdu"]
+[ext_resource type="PackedScene" uid="uid://da8nu6uvbw56" path="res://Scripts/camera_3d.tscn" id="7_2a0m7"]
+[ext_resource type="PackedScene" uid="uid://bihdcr7oe6yaa" path="res://Scripts/flash_light_3d.tscn" id="8_cd2xg"]
+[ext_resource type="Shader" uid="uid://bknx4sbhoevs6" path="res://Shaders/wall_shader.tres" id="10_todxn"]
+[ext_resource type="Texture2D" uid="uid://cdxfi5a3gcepp" path="res://Textures/Graffiti.png" id="11_glkoa"]
+[ext_resource type="Texture2D" uid="uid://bnqge0pda7u8w" path="res://Textures/brick_ambient.png" id="12_0mya4"]
+[ext_resource type="Texture2D" uid="uid://o8jde7fms3ph" path="res://Textures/brick_normal.png" id="13_lkbul"]
+[ext_resource type="Texture2D" uid="uid://5mbjs00rruu8" path="res://Textures/brick.jpg" id="14_kf8oo"]
+[ext_resource type="Script" path="res://Scripts/Wall.gd" id="15_pgueo"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_nkdek"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d1dlt"]
+albedo_color = Color(0.862745, 0.843137, 1, 1)
+albedo_texture = ExtResource("1_1leo3")
+metallic = 0.25
+metallic_specular = 0.28
+metallic_texture = ExtResource("4_2unkd")
+roughness = 0.6
+normal_enabled = true
+normal_scale = 10.07
+normal_texture = ExtResource("6_1wfdu")
+ao_enabled = true
+ao_light_affect = 0.17
+ao_texture = ExtResource("2_phncp")
+heightmap_enabled = true
+heightmap_scale = 2.0
+heightmap_texture = ExtResource("3_hwi70")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_48rf7"]
+sky_top_color = Color(0.0666667, 0.0392157, 0.121569, 1)
+sky_horizon_color = Color(0.551961, 0.539216, 0.553922, 1)
+sky_energy_multiplier = 0.15
+ground_bottom_color = Color(0.141176, 0.117647, 0.0941176, 1)
+ground_horizon_color = Color(0.551961, 0.539216, 0.553922, 1)
+
+[sub_resource type="Sky" id="Sky_jjlok"]
+sky_material = SubResource("ProceduralSkyMaterial_48rf7")
+
+[sub_resource type="Environment" id="Environment_ufsxx"]
+background_mode = 2
+background_energy_multiplier = 1.22
+sky = SubResource("Sky_jjlok")
+tonemap_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_g2oy7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_63irx"]
+render_priority = 0
+shader = ExtResource("10_todxn")
+shader_parameter/mouse_position = null
+shader_parameter/UVMode = 0.0
+shader_parameter/GraffitiColor = Color(1, 1, 1, 1)
+shader_parameter/WallTex = ExtResource("14_kf8oo")
+shader_parameter/GraffitiTex = ExtResource("11_glkoa")
+shader_parameter/WallAmbientOcclusion = ExtResource("12_0mya4")
+shader_parameter/WallNormal = ExtResource("13_lkbul")
+
+[node name="Scene" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(80.121, 0, 0, 0, 36.8, 0, 0, 0, 0.666, -32.1793, 6.807, -47.9088)
+mesh = SubResource("QuadMesh_nkdek")
+surface_material_override/0 = ExtResource("1_1lgr6")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-5.59454, 0, -0.664374, 0, 36.8, 0, 79.9254, 0, -0.0465042, 29.0114, 5.88811, 21.8298)
+mesh = SubResource("QuadMesh_nkdek")
+surface_material_override/0 = ExtResource("2_eenhm")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.53573, 0, 0.66378, 0, 36.8, 0, -79.854, 0, -0.0543278, -88.8848, 5.69653, 18.4524)
+mesh = SubResource("QuadMesh_nkdek")
+surface_material_override/0 = SubResource("StandardMaterial3D_d1dlt")
+
+[node name="MyCamera3D" parent="." instance=ExtResource("7_2a0m7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.1093, 0, 18.677)
+
+[node name="FlashLight3D" parent="MyCamera3D" instance=ExtResource("8_cd2xg")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.313992, -0.11077, 0.942942, 0, 0.993171, 0.116671, -0.949425, -0.0366337, 0.311848, 0, 0, 0)
+light_energy = 0.25
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ufsxx")
+
+[node name="Wall" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.021, -0.129328, 66.8458)
+
+[node name="Mesh" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(-60.0017, -0.110639, 0.0435671, -0.125025, 51.9998, 0.00110425, -2.61188, 0.0525533, -1.0009, -0.423965, 0.104099, 0.0639725)
+mesh = SubResource("QuadMesh_g2oy7")
+surface_material_override/0 = SubResource("ShaderMaterial_63irx")
+script = ExtResource("15_pgueo")

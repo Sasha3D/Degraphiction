@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de3qrpkqf5rus"
-path.s3tc="res://.godot/imported/graffiti.png-2bd882744e4275ad40e35cf6d1b72310.s3tc.ctex"
+uid="uid://cdxfi5a3gcepp"
+path.s3tc="res://.godot/imported/Graffiti.png-a4bd0e783bc02b9dd6e55710b7ea5789.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/graffiti.png"
-dest_files=["res://.godot/imported/graffiti.png-2bd882744e4275ad40e35cf6d1b72310.s3tc.ctex"]
+source_file="res://Textures/Graffiti.png"
+dest_files=["res://.godot/imported/Graffiti.png-a4bd0e783bc02b9dd6e55710b7ea5789.s3tc.ctex"]
 
 [params]
 

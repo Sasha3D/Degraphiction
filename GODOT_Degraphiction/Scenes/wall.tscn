@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://dne2jy1bxskbn"]
 
 [ext_resource type="Shader" uid="uid://bknx4sbhoevs6" path="res://Shaders/wall_shader.tres" id="1_m56km"]
-[ext_resource type="Texture2D" uid="uid://bcx7ua3ysbue" path="res://Textures/brick.jpg" id="1_qf6ro"]
+[ext_resource type="Texture2D" uid="uid://5mbjs00rruu8" path="res://Textures/brick.jpg" id="1_qf6ro"]
 [ext_resource type="Texture2D" uid="uid://bnqge0pda7u8w" path="res://Textures/brick_ambient.png" id="2_5prtr"]
-[ext_resource type="Texture2D" uid="uid://de3qrpkqf5rus" path="res://Textures/graffiti.png" id="2_o5y2i"]
+[ext_resource type="Texture2D" uid="uid://cdxfi5a3gcepp" path="res://Textures/graffiti.png" id="2_o5y2i"]
 [ext_resource type="Texture2D" uid="uid://o8jde7fms3ph" path="res://Textures/brick_normal.png" id="5_it2ev"]
 [ext_resource type="Script" path="res://Scripts/Wall.gd" id="6_u6lt2"]
 

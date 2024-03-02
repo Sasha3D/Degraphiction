@@ -1,11 +1,11 @@
 [gd_scene load_steps=15 format=3 uid="uid://bntk1ksxnljgs"]
 
 [ext_resource type="Shader" uid="uid://bknx4sbhoevs6" path="res://Shaders/wall_shader.tres" id="2_ulpwd"]
-[ext_resource type="Texture2D" uid="uid://de3qrpkqf5rus" path="res://Textures/graffiti.png" id="3_3ixld"]
+[ext_resource type="Texture2D" uid="uid://cdxfi5a3gcepp" path="res://Textures/graffiti.png" id="3_3ixld"]
 [ext_resource type="Texture2D" uid="uid://bnqge0pda7u8w" path="res://Textures/brick_ambient.png" id="4_n1no0"]
 [ext_resource type="Texture2D" uid="uid://o8jde7fms3ph" path="res://Textures/brick_normal.png" id="5_r1og4"]
 [ext_resource type="Script" path="res://Scripts/Wall.gd" id="6_8ob64"]
-[ext_resource type="Texture2D" uid="uid://bcx7ua3ysbue" path="res://Textures/brick.jpg" id="6_ngqpg"]
+[ext_resource type="Texture2D" uid="uid://5mbjs00rruu8" path="res://Textures/brick.jpg" id="6_ngqpg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e7od5"]
 sky_top_color = Color(0.0666667, 0.0392157, 0.121569, 1)
@@ -14,13 +14,13 @@ sky_energy_multiplier = 0.15
 ground_bottom_color = Color(0.141176, 0.117647, 0.0941176, 1)
 ground_horizon_color = Color(0.551961, 0.539216, 0.553922, 1)
 
-[sub_resource type="Sky" id="Sky_jjlok"]
+[sub_resource type="Sky" id="Sky_lu50h"]
 sky_material = SubResource("ProceduralSkyMaterial_e7od5")
 
 [sub_resource type="Environment" id="Environment_ae5io"]
 background_mode = 2
 background_energy_multiplier = 1.22
-sky = SubResource("Sky_jjlok")
+sky = SubResource("Sky_lu50h")
 tonemap_mode = 2
 
 [sub_resource type="QuadMesh" id="QuadMesh_g2oy7"]
