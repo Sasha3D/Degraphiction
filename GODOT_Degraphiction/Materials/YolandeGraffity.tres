@@ -1,0 +1,30 @@
+[gd_resource type="StandardMaterial3D" load_steps=8 format=3 uid="uid://bswpbvt03bbgt"]
+
+[ext_resource type="Texture2D" uid="uid://5mbjs00rruu8" path="res://Textures/Brick.JPG" id="1_dm5j6"]
+[ext_resource type="Texture2D" uid="uid://cop1bwip2h2un" path="res://Textures/BrickAmbientOcc.png" id="2_4sioj"]
+[ext_resource type="Texture2D" uid="uid://df1ofcshrm2qv" path="res://Textures/BrickHeightMap.png" id="3_ro4ye"]
+[ext_resource type="Texture2D" uid="uid://di818b0foh2yt" path="res://Textures/BrickSpecularMap.png" id="4_g31tv"]
+[ext_resource type="Texture2D" uid="uid://dr3pgwab2nmcw" path="res://Textures/Grafffiti_Yolande_v2.png" id="5_hmfvf"]
+[ext_resource type="Texture2D" uid="uid://cp0y0b6q7qqdv" path="res://Textures/BrickNormal.png" id="6_h3m1i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3tla"]
+transparency = 1
+albedo_texture = ExtResource("5_hmfvf")
+
+[resource]
+next_pass = SubResource("StandardMaterial3D_r3tla")
+albedo_color = Color(0.862745, 0.843137, 1, 1)
+albedo_texture = ExtResource("1_dm5j6")
+metallic = 0.25
+metallic_specular = 0.28
+metallic_texture = ExtResource("4_g31tv")
+roughness = 0.6
+normal_enabled = true
+normal_scale = 10.07
+normal_texture = ExtResource("6_h3m1i")
+ao_enabled = true
+ao_light_affect = 0.17
+ao_texture = ExtResource("2_4sioj")
+heightmap_enabled = true
+heightmap_scale = 2.0
+heightmap_texture = ExtResource("3_ro4ye")
