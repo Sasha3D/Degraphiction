@@ -30,6 +30,7 @@ heightmap_scale = 2.0
 heightmap_texture = ExtResource("3_hwi70")
 
 [node name="Scene" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(80.121, 0, 0, 0, 36.8, 0, 0, 0, 0.666, -32.6126, 5.88811, -25.9028)
@@ -47,6 +48,6 @@ mesh = SubResource("QuadMesh_nkdek")
 surface_material_override/0 = SubResource("StandardMaterial3D_d1dlt")
 
 [node name="MyCamera3D" parent="." instance=ExtResource("7_2a0m7")]
-transform = Transform3D(0.999314, 0.0022087, -0.0369622, -0.00423713, 0.998483, -0.0548909, 0.0367849, 0.0550099, 0.997808, -33.1093, 0, 18.677)
+transform = Transform3D(0.999314, 0.0022087, -0.0369622, -0.00423713, 0.998483, -0.0548909, 0.0367849, 0.0550099, 0.997808, 0, 0, 0)
 
 [node name="FlashLight3D" parent="MyCamera3D" instance=ExtResource("8_cd2xg")]
