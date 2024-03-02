@@ -1,0 +1,56 @@
+[gd_scene load_steps=12 format=3 uid="uid://b2lgfkhx40pgv"]
+
+[ext_resource type="Texture2D" uid="uid://5mbjs00rruu8" path="res://Textures/Brick.JPG" id="1_1leo3"]
+[ext_resource type="Texture2D" uid="uid://cop1bwip2h2un" path="res://Textures/BrickAmbientOcc.png" id="2_phncp"]
+[ext_resource type="Texture2D" uid="uid://df1ofcshrm2qv" path="res://Textures/BrickHeightMap.png" id="3_hwi70"]
+[ext_resource type="Texture2D" uid="uid://di818b0foh2yt" path="res://Textures/BrickSpecularMap.png" id="4_2unkd"]
+[ext_resource type="Texture2D" uid="uid://cdxfi5a3gcepp" path="res://Textures/Graffiti.png" id="5_rgleb"]
+[ext_resource type="Texture2D" uid="uid://cp0y0b6q7qqdv" path="res://Textures/BrickNormal.png" id="6_1wfdu"]
+[ext_resource type="PackedScene" uid="uid://da8nu6uvbw56" path="res://Scripts/camera_3d.tscn" id="7_2a0m7"]
+[ext_resource type="PackedScene" uid="uid://bihdcr7oe6yaa" path="res://Scripts/flash_light_3d.tscn" id="8_cd2xg"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_nkdek"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h45r2"]
+transparency = 1
+albedo_texture = ExtResource("5_rgleb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdy37"]
+next_pass = SubResource("StandardMaterial3D_h45r2")
+albedo_color = Color(0.862745, 0.843137, 1, 1)
+albedo_texture = ExtResource("1_1leo3")
+metallic = 0.25
+metallic_specular = 0.28
+metallic_texture = ExtResource("4_2unkd")
+roughness = 0.6
+normal_enabled = true
+normal_scale = 10.07
+normal_texture = ExtResource("6_1wfdu")
+ao_enabled = true
+ao_light_affect = 0.17
+ao_texture = ExtResource("2_phncp")
+heightmap_enabled = true
+heightmap_scale = 2.0
+heightmap_texture = ExtResource("3_hwi70")
+
+[node name="Scene" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(80.121, 0, 0, 0, 36.8, 0, 0, 0, 0.666, -32.6126, 5.88811, -25.9028)
+mesh = SubResource("QuadMesh_nkdek")
+surface_material_override/0 = SubResource("StandardMaterial3D_cdy37")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-5.59454, 0, -0.664374, 0, 36.8, 0, 79.9254, 0, -0.0465042, 5.18558, 5.88811, 8.20656)
+mesh = SubResource("QuadMesh_nkdek")
+surface_material_override/0 = SubResource("StandardMaterial3D_cdy37")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.53573, 0, 0.66378, 0, 36.8, 0, -79.854, 0, -0.0543278, -68.0354, 5.69653, 18.4524)
+mesh = SubResource("QuadMesh_nkdek")
+surface_material_override/0 = SubResource("StandardMaterial3D_cdy37")
+
+[node name="MyCamera3D" parent="." instance=ExtResource("7_2a0m7")]
+transform = Transform3D(0.999314, 0.0022087, -0.0369622, -0.00423713, 0.998483, -0.0548909, 0.0367849, 0.0550099, 0.997808, -33.1093, 0, 18.677)
+
+[node name="FlashLight3D" parent="MyCamera3D" instance=ExtResource("8_cd2xg")]
