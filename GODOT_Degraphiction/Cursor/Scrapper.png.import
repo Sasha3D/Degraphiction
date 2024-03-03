@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uu5pcc222cml"
-path="res://.godot/imported/ClosedEye.png-1dfcc9f0b4ccf97f83b88204739a24bd.ctex"
+uid="uid://d15c76tng48po"
+path="res://.godot/imported/Scrapper.png-6cfc6774c18236d53651ad9fc4e90f99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cursor/ClosedEye.png"
-dest_files=["res://.godot/imported/ClosedEye.png-1dfcc9f0b4ccf97f83b88204739a24bd.ctex"]
+source_file="res://Cursor/Scrapper.png"
+dest_files=["res://.godot/imported/Scrapper.png-6cfc6774c18236d53651ad9fc4e90f99.ctex"]
 
 [params]
 

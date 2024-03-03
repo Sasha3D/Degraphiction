@@ -35,4 +35,4 @@ environment = SubResource("Environment_i2y1n")
 transform = Transform3D(0.19486, 0, 0.983757, 0, 1.00287, 0, -0.983757, 0, 0.19486, -92.3694, 0, 100)
 
 [node name="Wall3D2" parent="." instance=ExtResource("3_g2fb1")]
-transform = Transform3D(0.995416, 0, 0.0956373, 0, 1, 0, -0.0956373, 0, 0.995416, -35.5517, 0.457031, 59.3209)
+transform = Transform3D(0.995416, 0, 0.0956373, 0, 1, 0, -0.0956373, 0, 0.995416, 65.0523, 0.457031, 3.10994)
