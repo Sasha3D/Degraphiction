@@ -1,0 +1,85 @@
+[gd_scene load_steps=18 format=3 uid="uid://b72ikx2cxfbxv"]
+
+[ext_resource type="Script" path="res://Scripts/static_body_3d.gd" id="1_oissy"]
+[ext_resource type="PackedScene" uid="uid://cy2b7evnktmnt" path="res://Scripts/WallScene2.tscn" id="2_7moq2"]
+[ext_resource type="Texture2D" uid="uid://dr3pgwab2nmcw" path="res://Textures/Grafffiti_Yolande_v2.png" id="3_r8m7v"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aimoy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xrq3x"]
+size = Vector3(80.227, 36.7606, 3.86357)
+
+[sub_resource type="QuadMesh" id="QuadMesh_m7ude"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y1grv"]
+load_path = "res://.godot/imported/brick.jpg-1caef3bc1bfa2c5a33c1b4b0ae4ecc16.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dn52h"]
+load_path = "res://.godot/imported/BrickAmbientOcc.png-dc4f7d71542c1deff17d6d75c7fae4ef.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nxpit"]
+load_path = "res://.godot/imported/BrickHeightMap.png-a052e3f4e287133e983631aafa3b23f0.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_etbgq"]
+load_path = "res://.godot/imported/BrickSpecularMap.png-f643945c4c68832a42d62484c6006e3b.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hg85r"]
+load_path = "res://.godot/imported/BrickAmbientOcc.png-dc4f7d71542c1deff17d6d75c7fae4ef.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d6as7"]
+load_path = "res://.godot/imported/BrickHeightMap.png-a052e3f4e287133e983631aafa3b23f0.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k0uj6"]
+load_path = "res://.godot/imported/BrickSpecularMap.png-f643945c4c68832a42d62484c6006e3b.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sal5f"]
+load_path = "res://.godot/imported/brick_normal.png-585075261a7ad5a7550a97b59d2436ae.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1h1k1"]
+transparency = 1
+albedo_texture = ExtResource("3_r8m7v")
+metallic = 1.0
+metallic_texture = SubResource("CompressedTexture2D_k0uj6")
+normal_enabled = true
+normal_texture = SubResource("CompressedTexture2D_sal5f")
+ao_enabled = true
+ao_texture = SubResource("CompressedTexture2D_hg85r")
+heightmap_enabled = true
+heightmap_texture = SubResource("CompressedTexture2D_d6as7")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0wayd"]
+load_path = "res://.godot/imported/BrickNormal.png-f9d092f328acdabd7afb2cab16f1ba89.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0lup8"]
+next_pass = SubResource("StandardMaterial3D_1h1k1")
+albedo_color = Color(0.862745, 0.843137, 1, 1)
+albedo_texture = SubResource("CompressedTexture2D_y1grv")
+metallic = 0.25
+metallic_specular = 0.28
+metallic_texture = SubResource("CompressedTexture2D_etbgq")
+roughness = 0.6
+normal_enabled = true
+normal_scale = 10.07
+normal_texture = SubResource("CompressedTexture2D_0wayd")
+ao_enabled = true
+ao_light_affect = 0.17
+ao_texture = SubResource("CompressedTexture2D_dn52h")
+heightmap_enabled = true
+heightmap_scale = 2.0
+heightmap_texture = SubResource("CompressedTexture2D_nxpit")
+
+[node name="Wall3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_aimoy")
+script = ExtResource("1_oissy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_xrq3x")
+
+[node name="WallScene" parent="StaticBody3D" instance=ExtResource("2_7moq2")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(80.121, 0, 0, 0, 36.8, 0, 0, 0, 0.666, 0, 0, -1.51536)
+mesh = SubResource("QuadMesh_m7ude")
+surface_material_override/0 = SubResource("StandardMaterial3D_0lup8")

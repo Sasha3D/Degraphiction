@@ -1,18 +1,12 @@
-[gd_resource type="StandardMaterial3D" load_steps=8 format=3 uid="uid://c2e1g6by828ef"]
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://c2e1g6by828ef"]
 
-[ext_resource type="Texture2D" uid="uid://5mbjs00rruu8" path="res://Textures/Brick.JPG" id="1_ya8fv"]
+[ext_resource type="Texture2D" uid="uid://5mbjs00rruu8" path="res://Textures/brick.jpg" id="1_ya8fv"]
 [ext_resource type="Texture2D" uid="uid://cop1bwip2h2un" path="res://Textures/BrickAmbientOcc.png" id="2_uwucl"]
 [ext_resource type="Texture2D" uid="uid://df1ofcshrm2qv" path="res://Textures/BrickHeightMap.png" id="3_64c0s"]
 [ext_resource type="Texture2D" uid="uid://di818b0foh2yt" path="res://Textures/BrickSpecularMap.png" id="4_rv6g0"]
-[ext_resource type="Texture2D" uid="uid://c276d51o25jat" path="res://Textures/Grafffiti_Rat_v1.png" id="5_ucdqv"]
 [ext_resource type="Texture2D" uid="uid://cp0y0b6q7qqdv" path="res://Textures/BrickNormal.png" id="6_35gyh"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rsjit"]
-transparency = 1
-albedo_texture = ExtResource("5_ucdqv")
-
 [resource]
-next_pass = SubResource("StandardMaterial3D_rsjit")
 albedo_color = Color(0.862745, 0.843137, 1, 1)
 albedo_texture = ExtResource("1_ya8fv")
 metallic = 0.25
