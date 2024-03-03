@@ -8,7 +8,6 @@ var scrapper_mode= false
 
 func _ready():
 	$".".visible= false
-	var mesh_instance = get_parent().get_parent().get_child(1)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,3 +24,7 @@ func _process(delta):
 		scrapper_mode= true
 	
 
+
+
+
+# Step 3: Create a ViewportTexture

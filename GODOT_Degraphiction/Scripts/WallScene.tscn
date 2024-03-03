@@ -1,27 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://fcxa7mjp6r4k"]
+[gd_scene load_steps=6 format=3 uid="uid://fcxa7mjp6r4k"]
 
 [ext_resource type="Script" path="res://Scripts/wall_scene.gd" id="1_df0n1"]
+[ext_resource type="Script" path="res://Scripts/control.gd" id="2_atc37"]
+[ext_resource type="PackedScene" uid="uid://cjdv32sofq83m" path="res://Scripts/Mesh3D.tscn" id="3_ff0hq"]
 [ext_resource type="Texture2D" uid="uid://nrr2acs0836o" path="res://Cursor/UVLight.png" id="4_0w754"]
 [ext_resource type="Texture2D" uid="uid://d15c76tng48po" path="res://Cursor/Scrapper.png" id="5_63csm"]
 
 [node name="WallScene" type="Node2D"]
+visible = false
 top_level = true
 z_index = 10
 script = ExtResource("1_df0n1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 24.0
+offset_right = 1267.0
+offset_bottom = 1294.0
+script = ExtResource("2_atc37")
+
+[node name="Mesh3D" parent="Control" instance=ExtResource("3_ff0hq")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 20
 
 [node name="UvLight" type="Sprite2D" parent="."]
-position = Vector2(315, 1128)
+position = Vector2(345, 1086)
 texture = ExtResource("4_0w754")
 
 [node name="Scrapper" type="Sprite2D" parent="."]
-position = Vector2(445, 1116)
+position = Vector2(502, 1086)
 texture = ExtResource("5_63csm")
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Node" type="Node" parent="SubViewportContainer"]

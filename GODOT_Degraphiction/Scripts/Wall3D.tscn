@@ -1,91 +1,12 @@
-[gd_scene load_steps=24 format=3 uid="uid://cgs01sxepmw8w"]
+[gd_scene load_steps=5 format=3 uid="uid://cgs01sxepmw8w"]
 
 [ext_resource type="Script" path="res://Scripts/static_body_3d.gd" id="1_8nfdk"]
-[ext_resource type="PackedScene" uid="uid://fcxa7mjp6r4k" path="res://Scripts/WallScene.tscn" id="1_de62m"]
-[ext_resource type="Texture2D" uid="uid://5mbjs00rruu8" path="res://Textures/brick.jpg" id="3_n1av5"]
-[ext_resource type="Texture2D" uid="uid://6c0202cvaflw" path="res://Textures/Macrus.png" id="3_ncheu"]
-[ext_resource type="Texture2D" uid="uid://bgcb5tbbieihu" path="res://Textures/Macrus3.png" id="5_8wg8b"]
-[ext_resource type="Texture2D" uid="uid://cop1bwip2h2un" path="res://Textures/BrickAmbientOcc.png" id="6_13y0c"]
-[ext_resource type="Texture2D" uid="uid://df1ofcshrm2qv" path="res://Textures/BrickHeightMap.png" id="7_i7ft2"]
-[ext_resource type="Texture2D" uid="uid://di818b0foh2yt" path="res://Textures/BrickSpecularMap.png" id="8_nq6j0"]
-[ext_resource type="Texture2D" uid="uid://o8jde7fms3ph" path="res://Textures/brick_normal.png" id="9_u6lt4"]
+[ext_resource type="PackedScene" uid="uid://cjdv32sofq83m" path="res://Scripts/Mesh3D.tscn" id="2_7x1nd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aimoy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xrq3x"]
 size = Vector3(76.3297, 86.1145, 3.86357)
-
-[sub_resource type="QuadMesh" id="QuadMesh_m7ude"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0p0wi"]
-load_path = "res://.godot/imported/BrickAmbientOcc.png-dc4f7d71542c1deff17d6d75c7fae4ef.s3tc.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tpx76"]
-load_path = "res://.godot/imported/BrickHeightMap.png-a052e3f4e287133e983631aafa3b23f0.s3tc.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bvkh8"]
-load_path = "res://.godot/imported/BrickSpecularMap.png-f643945c4c68832a42d62484c6006e3b.s3tc.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qyqvb"]
-load_path = "res://.godot/imported/BrickAmbientOcc.png-dc4f7d71542c1deff17d6d75c7fae4ef.s3tc.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y2vr4"]
-load_path = "res://.godot/imported/BrickHeightMap.png-a052e3f4e287133e983631aafa3b23f0.s3tc.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_35nk1"]
-load_path = "res://.godot/imported/BrickSpecularMap.png-f643945c4c68832a42d62484c6006e3b.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5h3ty"]
-render_priority = 2
-transparency = 1
-albedo_texture = ExtResource("5_8wg8b")
-metallic = 1.0
-metallic_texture = ExtResource("8_nq6j0")
-normal_enabled = true
-normal_texture = ExtResource("9_u6lt4")
-ao_enabled = true
-ao_texture = ExtResource("6_13y0c")
-heightmap_enabled = true
-heightmap_texture = ExtResource("7_i7ft2")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sihlr"]
-load_path = "res://.godot/imported/brick_normal.png-585075261a7ad5a7550a97b59d2436ae.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y01qy"]
-render_priority = 1
-next_pass = SubResource("StandardMaterial3D_5h3ty")
-transparency = 1
-albedo_texture = ExtResource("3_ncheu")
-metallic = 1.0
-metallic_texture = SubResource("CompressedTexture2D_35nk1")
-normal_enabled = true
-normal_texture = SubResource("CompressedTexture2D_sihlr")
-ao_enabled = true
-ao_texture = SubResource("CompressedTexture2D_qyqvb")
-heightmap_enabled = true
-heightmap_texture = SubResource("CompressedTexture2D_y2vr4")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_14egt"]
-load_path = "res://.godot/imported/BrickNormal.png-f9d092f328acdabd7afb2cab16f1ba89.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7yhpd"]
-next_pass = SubResource("StandardMaterial3D_y01qy")
-transparency = 1
-albedo_color = Color(0.862745, 0.843137, 1, 1)
-albedo_texture = ExtResource("3_n1av5")
-metallic = 0.25
-metallic_specular = 0.28
-metallic_texture = SubResource("CompressedTexture2D_bvkh8")
-roughness = 0.6
-normal_enabled = true
-normal_scale = 10.07
-normal_texture = SubResource("CompressedTexture2D_14egt")
-ao_enabled = true
-ao_light_affect = 0.17
-ao_texture = SubResource("CompressedTexture2D_0p0wi")
-heightmap_enabled = true
-heightmap_scale = 2.0
-heightmap_texture = SubResource("CompressedTexture2D_tpx76")
 
 [node name="Wall3D" type="Node3D"]
 
@@ -93,13 +14,8 @@ heightmap_texture = SubResource("CompressedTexture2D_tpx76")
 physics_material_override = SubResource("PhysicsMaterial_aimoy")
 script = ExtResource("1_8nfdk")
 
-[node name="WallScene" parent="StaticBody3D" instance=ExtResource("1_de62m")]
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.527157, 0.984969, 0)
 shape = SubResource("BoxShape3D_xrq3x")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(80.121, 0, 0, 0, 90, 0, 0, 0, 0.666, 0, 0, -1.51536)
-mesh = SubResource("QuadMesh_m7ude")
-surface_material_override/0 = SubResource("StandardMaterial3D_7yhpd")
+[node name="Mesh3D" parent="." instance=ExtResource("2_7x1nd")]
