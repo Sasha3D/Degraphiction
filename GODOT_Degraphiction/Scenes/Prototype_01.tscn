@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://b2lgfkhx40pgv"]
 
-[ext_resource type="Texture2D" uid="uid://5mbjs00rruu8" path="res://Textures/Brick.JPG" id="1_la4cm"]
+[ext_resource type="Texture2D" uid="uid://5mbjs00rruu8" path="res://Textures/brick.jpg" id="1_la4cm"]
 [ext_resource type="Texture2D" uid="uid://cop1bwip2h2un" path="res://Textures/BrickAmbientOcc.png" id="2_itx8f"]
 [ext_resource type="Texture2D" uid="uid://df1ofcshrm2qv" path="res://Textures/BrickHeightMap.png" id="3_xqobc"]
 [ext_resource type="Texture2D" uid="uid://di818b0foh2yt" path="res://Textures/BrickSpecularMap.png" id="4_kfwyc"]
-[ext_resource type="Texture2D" uid="uid://cdxfi5a3gcepp" path="res://Textures/Graffiti.png" id="5_gwi2u"]
+[ext_resource type="Texture2D" uid="uid://dr3pgwab2nmcw" path="res://Textures/Grafffiti_Yolande_v2.png" id="5_gwi2u"]
 [ext_resource type="Texture2D" uid="uid://cp0y0b6q7qqdv" path="res://Textures/BrickNormal.png" id="6_f8qiq"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_nkdek"]
