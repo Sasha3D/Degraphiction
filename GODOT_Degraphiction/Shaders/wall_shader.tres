@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bnqge0pda7u8w" path="res://Textures/brick_ambient.png" id="1_jsldg"]
 [ext_resource type="Texture2D" uid="uid://5mbjs00rruu8" path="res://Textures/brick.jpg" id="2_2nov3"]
-[ext_resource type="Texture2D" uid="uid://cdxfi5a3gcepp" path="res://Textures/graffiti.png" id="3_xxeut"]
+[ext_resource type="Texture2D" uid="uid://cdxfi5a3gcepp" path="res://Textures/Graffiti.png" id="3_xxeut"]
 [ext_resource type="Texture2D" uid="uid://o8jde7fms3ph" path="res://Textures/brick_normal.png" id="4_p6ln7"]
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_k76on"]

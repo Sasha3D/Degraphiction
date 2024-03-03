@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://fcxa7mjp6r4k"]
+
+[ext_resource type="Script" path="res://Scripts/wall_scene.gd" id="1_df0n1"]
+[ext_resource type="Texture2D" uid="uid://c276d51o25jat" path="res://Textures/Grafffiti_Rat_v1.png" id="2_38nee"]
+
+[node name="WallScene" type="Node2D"]
+top_level = true
+z_index = 10
+script = ExtResource("1_df0n1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 20
+
+[node name="GrafffitiRatV1" type="Sprite2D" parent="."]
+position = Vector2(544, 332)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_38nee")
