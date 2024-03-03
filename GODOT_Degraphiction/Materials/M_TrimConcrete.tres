@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ccahclq4pe0ga"]
+
+[ext_resource type="Texture2D" uid="uid://cawe0beioiwpy" path="res://Textures/Concrete_Normal.png" id="2_e65qh"]
+
+[resource]
+albedo_color = Color(0.95, 0.95, 0.95, 1)
+roughness = 0.4
+normal_enabled = true
+normal_texture = ExtResource("2_e65qh")

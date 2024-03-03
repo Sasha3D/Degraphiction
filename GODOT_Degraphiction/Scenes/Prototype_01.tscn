@@ -1,0 +1,53 @@
+[gd_scene load_steps=11 format=3 uid="uid://b2lgfkhx40pgv"]
+
+[ext_resource type="Texture2D" uid="uid://5mbjs00rruu8" path="res://Textures/Brick.JPG" id="1_la4cm"]
+[ext_resource type="Texture2D" uid="uid://cop1bwip2h2un" path="res://Textures/BrickAmbientOcc.png" id="2_itx8f"]
+[ext_resource type="Texture2D" uid="uid://df1ofcshrm2qv" path="res://Textures/BrickHeightMap.png" id="3_xqobc"]
+[ext_resource type="Texture2D" uid="uid://di818b0foh2yt" path="res://Textures/BrickSpecularMap.png" id="4_kfwyc"]
+[ext_resource type="Texture2D" uid="uid://cdxfi5a3gcepp" path="res://Textures/Graffiti.png" id="5_gwi2u"]
+[ext_resource type="Texture2D" uid="uid://cp0y0b6q7qqdv" path="res://Textures/BrickNormal.png" id="6_f8qiq"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_nkdek"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h45r2"]
+transparency = 1
+albedo_texture = ExtResource("5_gwi2u")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdy37"]
+next_pass = SubResource("StandardMaterial3D_h45r2")
+albedo_color = Color(0.862745, 0.843137, 1, 1)
+albedo_texture = ExtResource("1_la4cm")
+metallic = 0.25
+metallic_specular = 0.28
+metallic_texture = ExtResource("4_kfwyc")
+roughness = 0.6
+normal_enabled = true
+normal_scale = 10.07
+normal_texture = ExtResource("6_f8qiq")
+ao_enabled = true
+ao_light_affect = 0.17
+ao_texture = ExtResource("2_itx8f")
+heightmap_enabled = true
+heightmap_scale = 2.0
+heightmap_texture = ExtResource("3_xqobc")
+
+[sub_resource type="Environment" id="Environment_bf815"]
+background_mode = 1
+background_energy_multiplier = 0.59
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(80.121, 0, 0, 0, 36.8, 0, 0, 0, 0.666, -35.1524, 29.1489, -32.852)
+mesh = SubResource("QuadMesh_nkdek")
+surface_material_override/0 = SubResource("StandardMaterial3D_cdy37")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.58315, 0.81081, -0.0502391, -0.774894, -0.573753, -0.265228, -0.243874, -0.115738, 0.962876, -19.8358, 1.75099, 39.4523)
+light_energy = 16.0
+spot_range = 159.65
+spot_angle = 21.22
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6354, 28.7931, 30.5655)
+environment = SubResource("Environment_bf815")

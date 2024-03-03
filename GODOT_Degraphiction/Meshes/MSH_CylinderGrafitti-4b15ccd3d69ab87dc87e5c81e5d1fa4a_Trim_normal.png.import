@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b5odxrpg2wqtv"
+path.s3tc="res://.godot/imported/MSH_CylinderGrafitti-4b15ccd3d69ab87dc87e5c81e5d1fa4a_Trim_normal.png-752295dada84260db3878c1a15bb9462.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={}
+
+[deps]
+
+source_file="res://Meshes/MSH_CylinderGrafitti-4b15ccd3d69ab87dc87e5c81e5d1fa4a_Trim_normal.png"
+dest_files=["res://.godot/imported/MSH_CylinderGrafitti-4b15ccd3d69ab87dc87e5c81e5d1fa4a_Trim_normal.png-752295dada84260db3878c1a15bb9462.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Meshes/MSH_CylinderGrafitti-4b15ccd3d69ab87dc87e5c81e5d1fa4a_Trim_normal.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
