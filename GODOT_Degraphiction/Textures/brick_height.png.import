@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdxfi5a3gcepp"
-path.s3tc="res://.godot/imported/Graffiti.png-a4bd0e783bc02b9dd6e55710b7ea5789.s3tc.ctex"
+uid="uid://dw2gmxc8wdc22"
+path.s3tc="res://.godot/imported/brick_height.png-47e0c58d7604859e2e01dae718e64437.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Graffiti.png"
-dest_files=["res://.godot/imported/Graffiti.png-a4bd0e783bc02b9dd6e55710b7ea5789.s3tc.ctex"]
+source_file="res://Textures/brick_height.png"
+dest_files=["res://.godot/imported/brick_height.png-47e0c58d7604859e2e01dae718e64437.s3tc.ctex"]
 
 [params]
 

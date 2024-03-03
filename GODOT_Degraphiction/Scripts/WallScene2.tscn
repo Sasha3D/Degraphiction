@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy2b7evnktmnt"]
+
+[ext_resource type="Script" path="res://Scripts/wall_scene.gd" id="1_n2w0e"]
+[ext_resource type="Texture2D" uid="uid://dr3pgwab2nmcw" path="res://Textures/Grafffiti_Yolande_v2.png" id="2_2hfkf"]
+
+[node name="WallScene" type="Node2D"]
+top_level = true
+z_index = 10
+script = ExtResource("1_n2w0e")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 20
+
+[node name="GrafffitiYolandeV2" type="Sprite2D" parent="."]
+position = Vector2(682, 663)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_2hfkf")

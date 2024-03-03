@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="GODOT_Degraphiction"
+
 run/main_scene="res://Scenes/Prototype_01.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0.0980392, 0.0980392, 0.0980392, 1)
@@ -36,3 +37,30 @@ environment/defaults/default_clear_color=Color(0.172549, 0.172549, 0.172549, 1)
 anti_aliasing/quality/msaa_3d=1
 anti_aliasing/quality/screen_space_aa=1
 occlusion_culling/use_occlusion_culling=true
+=======
+run/main_scene="res://Scripts/Scene3D.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
+
+[display]
+
+window/size/viewport_width=1296
+window/size/viewport_height=1296
+
+[input]
+
+KEY_Q={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":113,"echo":false,"script":null)
+]
+}
+press_w={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"echo":false,"script":null)
+]
+}
+press_e={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"echo":false,"script":null)
+]
+}
+

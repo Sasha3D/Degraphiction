@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2lgfkhx40pgv"]
+
+[ext_resource type="PackedScene" uid="uid://cgs01sxepmw8w" path="res://Scripts/Wall3D.tscn" id="2_vrpcb"]
+[ext_resource type="PackedScene" uid="uid://da8nu6uvbw56" path="res://Scripts/Camera3D.tscn" id="3_5iloq"]
+[ext_resource type="PackedScene" uid="uid://b72ikx2cxfbxv" path="res://Scripts/Wall3D2.tscn" id="3_g2fb1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tjbgb"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_360c6"]
+sky_material = SubResource("ProceduralSkyMaterial_tjbgb")
+
+[sub_resource type="Environment" id="Environment_i2y1n"]
+background_mode = 2
+sky = SubResource("Sky_360c6")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Scene3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.22816, -26.4206)
+
+[node name="Camera3D" parent="." instance=ExtResource("3_5iloq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 18, 121)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.541482, 0.593567, 0.595378, 0.0964124, -0.659669, 0.745347, 0.835166, 0.460994, 0.299972, 0, 52.6391, 116.457)
+light_energy = 2.992
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_i2y1n")
+
+[node name="Wall3D" parent="." instance=ExtResource("2_vrpcb")]
+transform = Transform3D(0.19486, 0, 0.983757, 0, 1.00287, 0, -0.983757, 0, 0.19486, -92.3694, 0, 100)
+
+[node name="Wall3D2" parent="." instance=ExtResource("3_g2fb1")]
+transform = Transform3D(0.995416, 0, 0.0956373, 0, 1, 0, -0.0956373, 0, 0.995416, 65.0523, 0.457031, 3.10994)
