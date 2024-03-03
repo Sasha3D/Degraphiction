@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://fcxa7mjp6r4k"]
+[gd_scene load_steps=6 format=3 uid="uid://fcxa7mjp6r4k"]
 
 [ext_resource type="Script" path="res://Scripts/wall_scene.gd" id="1_df0n1"]
 [ext_resource type="Texture2D" uid="uid://nrr2acs0836o" path="res://Cursor/UVLight.png" id="4_0w754"]
+[ext_resource type="Texture2D" uid="uid://6c0202cvaflw" path="res://Textures/Macrus.png" id="4_t7qom"]
 [ext_resource type="Texture2D" uid="uid://d15c76tng48po" path="res://Cursor/Scrapper.png" id="5_63csm"]
+[ext_resource type="Texture2D" uid="uid://bgcb5tbbieihu" path="res://Textures/Macrus3.png" id="5_fmm55"]
 
 [node name="WallScene" type="Node2D"]
 top_level = true
@@ -25,3 +27,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Node" type="Node" parent="SubViewportContainer"]
+
+[node name="Macrus" type="Sprite2D" parent="."]
+position = Vector2(642, 547)
+texture = ExtResource("4_t7qom")
+
+[node name="Macrus3" type="Sprite2D" parent="."]
+position = Vector2(636, 556)
+texture = ExtResource("5_fmm55")

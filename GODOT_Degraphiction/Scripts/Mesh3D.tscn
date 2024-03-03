@@ -1,0 +1,88 @@
+[gd_scene load_steps=20 format=3 uid="uid://bbv2ow0111j0h"]
+
+[ext_resource type="Texture2D" uid="uid://5mbjs00rruu8" path="res://Textures/brick.jpg" id="1_px1kq"]
+[ext_resource type="Texture2D" uid="uid://6c0202cvaflw" path="res://Textures/Macrus.png" id="2_htlbh"]
+[ext_resource type="Texture2D" uid="uid://bgcb5tbbieihu" path="res://Textures/Macrus3.png" id="3_gg84b"]
+[ext_resource type="Texture2D" uid="uid://cop1bwip2h2un" path="res://Textures/BrickAmbientOcc.png" id="4_f4nqi"]
+[ext_resource type="Texture2D" uid="uid://df1ofcshrm2qv" path="res://Textures/BrickHeightMap.png" id="5_43s4q"]
+[ext_resource type="Texture2D" uid="uid://di818b0foh2yt" path="res://Textures/BrickSpecularMap.png" id="6_ww540"]
+[ext_resource type="Texture2D" uid="uid://o8jde7fms3ph" path="res://Textures/brick_normal.png" id="7_3tkv4"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_38sk8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0p0wi"]
+load_path = "res://.godot/imported/BrickAmbientOcc.png-dc4f7d71542c1deff17d6d75c7fae4ef.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tpx76"]
+load_path = "res://.godot/imported/BrickHeightMap.png-a052e3f4e287133e983631aafa3b23f0.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bvkh8"]
+load_path = "res://.godot/imported/BrickSpecularMap.png-f643945c4c68832a42d62484c6006e3b.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xdwrl"]
+load_path = "res://.godot/imported/BrickAmbientOcc.png-dc4f7d71542c1deff17d6d75c7fae4ef.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7v66u"]
+load_path = "res://.godot/imported/BrickHeightMap.png-a052e3f4e287133e983631aafa3b23f0.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ycasg"]
+load_path = "res://.godot/imported/BrickSpecularMap.png-f643945c4c68832a42d62484c6006e3b.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bvipj"]
+render_priority = 2
+transparency = 1
+albedo_texture = ExtResource("3_gg84b")
+metallic = 1.0
+metallic_texture = ExtResource("6_ww540")
+normal_enabled = true
+normal_texture = ExtResource("7_3tkv4")
+ao_enabled = true
+ao_texture = ExtResource("4_f4nqi")
+heightmap_enabled = true
+heightmap_texture = ExtResource("5_43s4q")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o6000"]
+load_path = "res://.godot/imported/brick_normal.png-585075261a7ad5a7550a97b59d2436ae.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y01qy"]
+render_priority = 1
+next_pass = SubResource("StandardMaterial3D_bvipj")
+transparency = 1
+albedo_texture = ExtResource("2_htlbh")
+metallic = 1.0
+metallic_texture = SubResource("CompressedTexture2D_ycasg")
+normal_enabled = true
+normal_texture = SubResource("CompressedTexture2D_o6000")
+ao_enabled = true
+ao_texture = SubResource("CompressedTexture2D_xdwrl")
+heightmap_enabled = true
+heightmap_texture = SubResource("CompressedTexture2D_7v66u")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_14egt"]
+load_path = "res://.godot/imported/BrickNormal.png-f9d092f328acdabd7afb2cab16f1ba89.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_krb2h"]
+next_pass = SubResource("StandardMaterial3D_y01qy")
+transparency = 1
+albedo_color = Color(0.862745, 0.843137, 1, 1)
+albedo_texture = ExtResource("1_px1kq")
+metallic = 0.25
+metallic_specular = 0.28
+metallic_texture = SubResource("CompressedTexture2D_bvkh8")
+roughness = 0.6
+normal_enabled = true
+normal_scale = 10.07
+normal_texture = SubResource("CompressedTexture2D_14egt")
+ao_enabled = true
+ao_light_affect = 0.17
+ao_texture = SubResource("CompressedTexture2D_0p0wi")
+heightmap_enabled = true
+heightmap_scale = 2.0
+heightmap_texture = SubResource("CompressedTexture2D_tpx76")
+
+[node name="Mesh3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(80.121, 0, 0, 0, 90, 0, 0, 0, 0.666, 0, 0, 0)
+mesh = SubResource("QuadMesh_38sk8")
+surface_material_override/0 = SubResource("StandardMaterial3D_krb2h")
